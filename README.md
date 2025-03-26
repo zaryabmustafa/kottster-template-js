@@ -1,11 +1,12 @@
 # Kottsster App
 
-## Quick Start
+## Getting started
 
 ### 1. Clone the repository
 
 ```bash
 git clone https://github.com/kottster/kottster-template-js my-kottster-app
+
 cd my-kottster-app
 ```
 
@@ -18,11 +19,20 @@ docker build -t my-kottster-app .
 ### 3. Run the container
 
 ```bash
-docker run -d --name my-kottster-container -p 5480:5480 -p 5481:5481 \
+docker run -d --name my-kottster-container \
+  -p 5480:5480 -p 5481:5481 \
   -v $(pwd):/app \
   -v /app/node_modules \
   my-kottster-app
 ```
+
+> Here's what each flag does:
+> - `-d` - Run the container in the background
+> - `--name my-kottster-container` - Assign a name to the container
+> - `-p 5480:5480 -p 5481:5481` - Map the container ports to the host machine. The first port is for the main server, and the second port is for the dev-sync server (runs only in development mode)
+> - `-v $(pwd):/app` - Mount the current directory to the `/app` directory in the container
+> - `-v /app/node_modules` - Mount the `node_modules` directory to the container. This is done to prevent the `node_modules` directory from being overwritten by the mounted volume
+> - `my-kottster-app` - The name of the Docker image you built in the previous step
 
 ### 4. Start the application
 
@@ -59,10 +69,11 @@ docker logs my-kottster-container
 
 ## Configuration
 
-You can customize the ports by modifying the Docker run command:
+You can **customize the ports** by modifying the Docker run command:
 
 ```bash
-docker run -d --name my-kottster-container -p <host-port>:5480 -p <host-port>:5481 \
+docker run -d --name my-kottster-container \
+  -p <host-port>:5480 -p <host-port>:5481 \
   -v $(pwd):/app \
   -v /app/node_modules \
   my-kottster-app
