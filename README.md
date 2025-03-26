@@ -1,29 +1,69 @@
-# Kottster App
+# Kottsster App
 
-## Development server
+## Quick Start
 
-**You can start the development server with the following command**:
+### 1. Clone the repository
 
 ```bash
-npm run dev
+git clone https://github.com/kottster/kottster-template-js my-kottster-app
+cd my-kottster-app
 ```
 
-This will start the server on [http://localhost:5480](http://localhost:5480) or a different port if 5480 is already in use.
+### 2. Build the Docker image
 
-## Deploying
-
-**You need to build the app before deploying it. Run the following command**:
-
-```
-npm run build
+```bash
+docker build -t my-kottster-app .
 ```
 
-This compiles the app and stores it in the `build` directory. 
+### 3. Run the container
 
-**Once built, you can start the app in production mode:**
-
+```bash
+docker run -d --name my-kottster-container -p 5480:5480 -p 5481:5481 \
+  -v $(pwd):/app \
+  -v /app/node_modules \
+  my-kottster-app
 ```
-npm run start
+
+### 4. Start the application
+
+**Development mode:**
+```bash
+docker exec -it my-kottster-container /dev.sh
 ```
 
-Learn more about available deployment options in the [documentation](https://docs.kottster.app/deploying).
+**Production mode:**
+```bash
+docker exec -it my-kottster-container /prod.sh
+```
+
+## Development
+
+The container is configured to synchronize your local codebase with the container. Any changes made to your local files will be immediately reflected in the running application.
+
+## Container Management
+
+**Stop the container:**
+```bash
+docker stop my-kottster-container
+```
+
+**Remove the container:**
+```bash
+docker rm my-kottster-container
+```
+
+**View container logs:**
+```bash
+docker logs my-kottster-container
+```
+
+## Configuration
+
+You can customize the ports by modifying the Docker run command:
+
+```bash
+docker run -d --name my-kottster-container -p <host-port>:5480 -p <host-port>:5481 \
+  -v $(pwd):/app \
+  -v /app/node_modules \
+  my-kottster-app
+```
