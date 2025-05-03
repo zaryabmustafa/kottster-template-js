@@ -1,4 +1,4 @@
-# Kottsster App
+# Kottster App
 
 ## Getting started
 
