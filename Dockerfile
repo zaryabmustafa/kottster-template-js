@@ -10,9 +10,13 @@ RUN npm install
 
 EXPOSE 5480 5481
 
-ENV PORT=5480
-ENV DEV_SYNC_SERVER_PORT=5481
 ENV VITE_DOCKER_MODE=true
+
+# App server port
+ENV PORT=5480
+
+# Dev sync server port (only runs in dev mode)
+ENV DEV_SYNC_SERVER_PORT=5481
 
 COPY scripts/dev.sh /dev.sh
 COPY scripts/prod.sh /prod.sh
