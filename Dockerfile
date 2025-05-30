@@ -16,7 +16,7 @@ ENV VITE_DOCKER_MODE=true
 ENV PORT=5480
 
 # Dev sync server port (only runs in dev mode)
-ENV DEV_SYNC_SERVER_PORT=5481
+ENV SERVER_PORT=5481
 
 COPY scripts/dev.sh /dev.sh
 COPY scripts/prod.sh /prod.sh
