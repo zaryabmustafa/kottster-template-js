@@ -6,10 +6,9 @@ export default defineConfig({
   root: './app',
   server: {
     port: 5480,
-    
-    // Required for Docker
     open: false,
-    host: '0.0.0.0'
+    // Required for Docker
+    host: '0.0.0.0',
   },
   build: {
     outDir: '../dist/client',

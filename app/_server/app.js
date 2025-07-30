@@ -1,5 +1,4 @@
 import { createApp } from '@kottster/server';
-import { dataSourceRegistry } from './data-sources/registry';
 import schema from '../../kottster-app.json';
 
 export const app = createApp({
@@ -11,5 +10,3 @@ export const app = createApp({
   */
   secretKey: process.env.SECRET_KEY,
 });
-
-app.registerDataSources(dataSourceRegistry);

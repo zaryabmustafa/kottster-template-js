@@ -1,5 +1,5 @@
 {
-  "name": "kottster-template-js",
+  "name": "my-app",
   "version": "1.0.0",
   "type": "module",
   "private": true,
@@ -14,14 +14,10 @@
     "react": "^19.x",
     "react-dom": "^19.x",
     "react-router-dom": "^7.x",
-    "@kottster/common": "^2.x",
-    "@kottster/cli": "^2.x",
-    "@kottster/server": "^2.x",
-    "@kottster/react": "^2.x",
-    "@mantine/core": "^8.x",
-    "@mantine/hooks": "^8.x",
-    "@mantine/modals": "^8.x",
-    "@mantine/notifications": "^8.x"
+    "@kottster/common": "^3.x",
+    "@kottster/cli": "^3.x",
+    "@kottster/server": "^3.x",
+    "@kottster/react": "^3.x"
   },
   "devDependencies": {
     "vite": "^6.x",
