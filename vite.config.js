@@ -9,6 +9,7 @@ export default defineConfig({
     open: false,
     // Required for Docker
     host: '0.0.0.0',
+    allowedHosts: ['client.vps.pulsecentral.cc'],
   },
   build: {
     outDir: '../dist/client',
