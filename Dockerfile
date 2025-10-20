@@ -8,6 +8,8 @@ RUN apk add --no-cache git tini
 
 RUN npm install
 
+COPY . .
+
 EXPOSE 5480 5481
 
 ENV VITE_DOCKER_MODE=true
