@@ -28,4 +28,4 @@ ENTRYPOINT ["/sbin/tini", "--"]
 
 # This is a dummy command to keep the container running
 #CMD ["tail", "-f", "/dev/null"]
-CMD ["/prod.sh"]
+CMD ["/dev.sh"]
