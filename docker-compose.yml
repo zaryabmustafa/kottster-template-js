@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: my-kottster-container
     ports:
       - "5480:5480"
       - "5481:5481"
