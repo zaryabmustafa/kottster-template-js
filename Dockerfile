@@ -25,4 +25,5 @@ RUN chmod +x /dev.sh /prod.sh
 ENTRYPOINT ["/sbin/tini", "--"]
 
 # This is a dummy command to keep the container running
-CMD ["tail", "-f", "/dev/null"]
+#CMD ["tail", "-f", "/dev/null"]
+CMD ["/prod.sh"]
